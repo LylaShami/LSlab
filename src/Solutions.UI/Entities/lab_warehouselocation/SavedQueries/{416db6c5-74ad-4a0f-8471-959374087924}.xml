@@ -26,6 +26,9 @@
           <attribute name="lab_address" />
           <attribute name="lab_capacity" />
           <attribute name="lab_isactive" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
         </entity>
       </fetch>
     </fetchxml>

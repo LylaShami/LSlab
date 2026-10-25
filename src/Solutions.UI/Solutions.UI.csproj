@@ -1,6 +1,7 @@
 <Project Sdk="TALXIS.DevKit.Build.Sdk/1.11.1">
   <ItemGroup>
     <ProjectReference Include="..\Scripts.UI\Scripts.UI.csproj" />
+    <ProjectReference Include="..\Apps.WarehousePicking\Apps.WarehousePicking.csproj" />
   </ItemGroup>
   <PropertyGroup>
     <ProjectType>Solution</ProjectType>

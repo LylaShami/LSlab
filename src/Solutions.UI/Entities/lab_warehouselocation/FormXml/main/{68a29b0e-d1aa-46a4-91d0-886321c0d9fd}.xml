@@ -80,27 +80,6 @@
                         </control>
                       </cell>
                     </row>
-                    <row>
-                      <cell locklevel="0" id="{B6C27642-ED2F-4508-987F-413D32D3D234}" rowspan="4" colspan="1" auto="false" showlabel="false">
-                        <labels>
-                          <label description="Warehouse Items" languagecode="1033" />
-                        </labels>
-                        <control indicationOfSubgrid="true" id="subgrid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" uniqueid="{15E4F85D-F8DB-4646-A0F9-C7E355707C0D}">
-                          <parameters>
-                            <RecordsPerPage>4</RecordsPerPage>
-                            <AutoExpand>Fixed</AutoExpand>
-                            <EnableQuickFind>false</EnableQuickFind>
-                            <EnableViewPicker>false</EnableViewPicker>
-                            <EnableChartPicker>true</EnableChartPicker>
-                            <ChartGridMode>All</ChartGridMode>
-                            <TargetEntityType>lab_warehouseitem</TargetEntityType>
-                            <ViewId>{825aae30-4d25-410d-8c78-09d27886b9f5}</ViewId>
-                            <ViewIds>{825aae30-4d25-410d-8c78-09d27886b9f5}</ViewIds>
-                            <RelationshipName>lab_lab_warehouselocation_lab_warehouseitem_locationid</RelationshipName>
-                          </parameters>
-                        </control>
-                      </cell>
-                    </row>
                   </rows>
                 </section>
               </sections>

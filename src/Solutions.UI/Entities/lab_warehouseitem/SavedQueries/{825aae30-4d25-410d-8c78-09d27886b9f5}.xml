@@ -32,6 +32,9 @@
           <attribute name="lab_unitprice" />
           <attribute name="lab_locationid" />
           <attribute name="lab_reorderpoint" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
         </entity>
       </fetch>
     </fetchxml>

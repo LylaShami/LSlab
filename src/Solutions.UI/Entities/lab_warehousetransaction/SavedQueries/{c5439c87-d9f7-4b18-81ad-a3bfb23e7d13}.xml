@@ -30,6 +30,9 @@
           <attribute name="lab_quantity" />
           <attribute name="lab_transactiondate" />
           <attribute name="lab_totalvalue" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
         </entity>
       </fetch>
     </fetchxml>

@@ -3,6 +3,7 @@ import type { IColumn, IDataset, IRecord } from "@talxis/client-libraries";
 const LOW_STOCK_FALLBACK = 10;
 const LOW_STOCK_BACKGROUND = "#FDE7E9";
 
+const loadedDatasets = new WeakSet<IDataset>();
 const initialized = new Map<string, IDataset>();
 const waiters = new Map<string, ((dataset: IDataset) => void)[]>();
 const anyWaiters: ((dataset: IDataset) => void)[] = [];
@@ -14,8 +15,13 @@ export class GridApi {
         waiters.get(controlId)?.forEach(resolve => resolve(dataset));
         waiters.delete(controlId);
         anyWaiters.splice(0).forEach(resolve => resolve(dataset));
+        dataset.addEventListener("onFirstDataLoaded", () => loadedDatasets.add(dataset));
         dataset.addEventListener("onDestroyed", () => initialized.delete(controlId));
         GridApi.customizeItemsGrid(dataset);
+    }
+
+    public static hasLoaded(dataset: IDataset): boolean {
+        return loadedDatasets.has(dataset);
     }
 
     public static getDataset(controlId?: string): Promise<IDataset> {
@@ -70,9 +76,10 @@ export class LocationForm {
             "talxisgrid"
         );
 
-        dataset.addEventListener("onFirstDataLoaded", showCount);
-        if (dataset.sortedRecordIds.length > 0) {
+        if (GridApi.hasLoaded(dataset) || dataset.sortedRecordIds.length > 0) {
             showCount();
+        } else {
+            dataset.addEventListener("onFirstDataLoaded", showCount);
         }
     }
 }
