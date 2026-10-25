@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/Apps.WarehousePicking/Apps.WarehousePicking.csproj" />
     <Project Path="src/Packages.Main/Packages.Main.csproj" />
     <Project Path="src/Plugins.Warehouse/Plugins.Warehouse.csproj" />
     <Project Path="src/Scripts.UI/Scripts.UI.csproj" />
