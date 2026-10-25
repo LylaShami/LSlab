@@ -137,7 +137,7 @@ export default function TransactionsPage() {
 
       {error && (
         <MessageBar intent="error">
-          <MessageBarBody>Failed to load transactions: {errorText(error)}</MessageBarBody>
+          <MessageBarBody>{errorText(error)}</MessageBarBody>
         </MessageBar>
       )}
 

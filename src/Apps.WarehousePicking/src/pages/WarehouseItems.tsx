@@ -37,7 +37,7 @@ const formFields: FormField[] = [
   { column: { name: "lab_name", displayName: "Name", dataType: "SingleLine.Text", isPrimary: true }, required: true },
   { column: { name: "lab_sku", displayName: "SKU", dataType: "SingleLine.Text" }, required: true },
   { column: { name: "lab_availablequantity", displayName: "Available Quantity", dataType: "Whole.None" }, required: true },
-  { column: { name: "lab_category", displayName: "Category", dataType: "OptionSet", metadata: { OptionSet: categoryOptionMetadata } as IColumn["metadata"] } },
+  { column: { name: "lab_category", displayName: "Category", dataType: "OptionSet", metadata: { OptionSet: categoryOptionMetadata } as IColumn["metadata"] }, required: true },
   { column: { name: "lab_locationid", displayName: "Location", dataType: "SingleLine.Text" }, lookupEntity: "lab_warehouselocation" },
 ];
 

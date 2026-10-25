@@ -116,7 +116,7 @@ export default function LocationsPage() {
 
       {error && (
         <MessageBar intent="error">
-          <MessageBarBody>Failed to load locations: {errorText(error)}</MessageBarBody>
+          <MessageBarBody>{errorText(error)}</MessageBarBody>
         </MessageBar>
       )}
 
